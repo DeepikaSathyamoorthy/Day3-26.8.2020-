@@ -1,0 +1,31 @@
+
+import java.io.*;
+import java.util.Scanner;
+class UserMainCode{
+    public static boolean ValidatePlayer(String playerName){
+        for(int i=0;i<playerName.length();i++)
+        {
+            if((playerName.charAt(i)=='a')&& (playerName.indexOf(i)%2==0))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+class Main {
+	public static void main (String[] args) {
+	    Scanner input=new Scanner(System.in);
+		System.out.println("Enter the Player Name: ");
+		String playerName=input.nextLine();
+		UserMainCode obj=new UserMainCode();
+		boolean value=obj.ValidatePlayer(playerName);
+		if(value=true)
+		{
+		    System.out.println("Valid name");
+		}
+		else{
+		    System.out.println("Invalid name");
+		}
+	}
+}

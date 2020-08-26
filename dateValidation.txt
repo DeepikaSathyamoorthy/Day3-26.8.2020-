@@ -1,0 +1,37 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
+import java.util.Scanner;
+class UserMainCode{
+   public static boolean validateDate(String strDate)
+   {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+	    try
+	    {
+	        Date javaDate = dateFormat.parse(strDate); 
+	    }
+	    catch (ParseException e)
+	    {
+	        return false;
+	    }
+	    return true;
+	}
+   }
+   public class Main{
+        public static void main(String args[])
+        {
+	    UserMainCode format=new UserMainCode();
+	    Scanner input=new Scanner(System.in);
+	    System.out.println("Enter the date:");
+	    String date=input.nextLine();
+	    boolean value=format.validateDate(date);
+	    if(value==true)
+	    {
+	        System.out.println("valid");
+	    }
+	    else{
+	        System.out.println("Invalid");
+	    }
+	    }
+	}
+	

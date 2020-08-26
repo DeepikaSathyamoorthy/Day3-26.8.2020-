@@ -1,0 +1,83 @@
+import java.io.*;
+import java.util.Scanner;
+class Shape{
+    String shapeName;
+    double calculateArea()
+    {
+        return 0;
+    }
+}
+class Square extends Shape{
+    private double side;
+    //shapeName="Square";
+    Square(double side)
+    {
+        this.side=side;
+    }
+    double calculateArea()
+    {
+        return (side*side);
+    }
+}
+class Rectangle extends Shape{
+    private double length,breath;
+    //shapeName="Rectangle";
+    Rectangle(double length,double breath)
+    {
+        this.length=length;
+        this.breath=breath; 
+    }
+    double calculateArea()
+    {
+        return (length*breath);
+    }
+}
+class Circle extends Shape{
+    private double radius;
+    //shapeName="Circle";
+    Circle(double radius)
+    {
+        this.radius=radius;
+    }
+    double calculateArea()
+    {
+        return (Math.PI * radius *radius);
+    }
+}
+class Main {
+	public static void main (String[] args) {
+		System.out.println("1.Rectangle\n2.Square\n3.Circle\nArea Calculator --- Choose your shape");
+		Scanner input=new Scanner(System.in);
+		int value=input.nextInt();
+		double output;
+		switch(value)
+		{
+		    case 1:
+		        System.out.println("Enter length and breadth: ");
+		        double length=input.nextInt();
+		        double breath=input.nextInt();
+		        Rectangle rect=new Rectangle(length,breath);
+		        output=rect.calculateArea();
+		        System.out.println("Area of Rectangle is: "+output);
+		        break;
+		        
+		    case 2:
+		        System.out.println("Enter side: ");
+		        double side=input.nextInt();
+		        Square sqr=new Square(side);
+		        output=sqr.calculateArea();
+		        System.out.println("Area of Square is: "+output);
+		        break;
+		        
+		        
+		     case 3:
+		        System.out.println("Enter radius: ");
+		        double radius=input.nextInt();
+		        Circle circle=new Circle(radius);
+		        output=circle.calculateArea();
+		        System.out.println("Area of Circle is: "+output);
+		        break;
+		        
+		}
+	}
+}
